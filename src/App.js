@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Casillas from './Counter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 
-function App() {
+
+/* Creamos una funcion que reciba 6 num  */
+
+function App({num1, num2, num3, num4, num5, num6}) {
+
+  const relojIcono = <FontAwesomeIcon icon={faClock} />
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="row">
+          <div className="col-md-1 px-4"> {relojIcono} </div>
+          <Casillas numeros={num6}/>
+          <Casillas numeros={num5}/>
+          <Casillas numeros={num4}/>
+          <Casillas numeros={num3}/>
+          <Casillas numeros={num2}/>
+          <Casillas numeros={num1}/>
+        </div>
     </div>
   );
 }
